@@ -1,0 +1,35 @@
+{
+  "name": "slf-one-server",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "pg": "^8.11.0",
+    "sequelize": "^6.32.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.0",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.13.0",
+    "docxtemplater": "^3.34.0",
+    "pizzip": "^3.1.4",
+    "jszip": "^3.10.1",
+    "nodemailer": "^6.9.0",
+    "joi": "^17.9.0",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "fs-extra": "^11.1.0",
+    "sequelize-cli": "^6.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.0"
+  }
+}

@@ -36,6 +36,9 @@ const testConnection = async () => {
   }
 };
 
+// Export sequelize early to avoid circular dependency with models
+module.exports = sequelize;
+
 // Import models
 const User = require('../models/User');
 const Project = require('../models/Project');
@@ -383,5 +386,3 @@ const syncModels = async () => {
     process.exit(1); // Exit if model sync fails
   }
 };
-
-module.exports = sequelize;

@@ -35,7 +35,7 @@ import {
   TabPanel
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { AttachmentIcon, CloseIcon, CameraIcon, LocationIcon } from '@chakra-ui/icons';
+import { AttachmentIcon, CloseIcon } from '@chakra-ui/icons';
 import axios from 'axios';
 
 const PhotoUpload = ({ inspectionId, onUploadSuccess, defaultFloorInfo = '' }) => {
@@ -377,7 +377,7 @@ const PhotoUpload = ({ inspectionId, onUploadSuccess, defaultFloorInfo = '' }) =
                       
                       <Button
                         onClick={() => cameraInputRef.current?.click()}
-                        leftIcon={<CameraIcon />}
+                        leftIcon={<Text as="span" fontSize="md">📷</Text>}
                         colorScheme="green"
                         variant="outline"
                         isDisabled={uploading}

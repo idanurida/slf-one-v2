@@ -4,6 +4,7 @@ import {
   Box,
   Heading,
   Text,
+  VStack,
   SimpleGrid,
   Stat,
   StatLabel,

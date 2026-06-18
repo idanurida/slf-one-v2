@@ -114,7 +114,7 @@ exports.saveChecklistResponses = async (inspectionId, responses, userId) => {
         inspection_id: parseInt(inspectionId),
         checklist_item_id: parseInt(checklist_item_id),
         sample_number: sample_number || null,
-        response_ response_data || {},
+        response_data: response_data || {},
         user_id: userId
       };
     });
@@ -231,7 +231,7 @@ exports.updateChecklistResponse = async (responseId, updateData, userId) => {
 
     // Update respons
     await response.update({
-      response_ response_data || response.response_data,
+      response_data: response_data || response.response_data,
       sample_number: sample_number || response.sample_number,
       user_id: userId, // Update user yang terakhir mengedit
       updated_at: new Date()
@@ -463,7 +463,7 @@ exports.createEmptyChecklistResponses = async (inspectionId, requestType) => {
       inspection_id: inspectionId,
       checklist_item_id: item.id,
       sample_number: null,
-      response_ {},
+      response_data: {},
       user_id: null
     }));
 

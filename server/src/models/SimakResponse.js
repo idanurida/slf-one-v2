@@ -76,7 +76,7 @@ const SimakResponse = sequelize.define('SimakResponse', {
     allowNull: true,
     comment: 'Kesimpulan akhir tentang item'
   },
-  response_ {
+  response_data: {
     type: DataTypes.JSONB || DataTypes.TEXT,
     allowNull: true,
     comment: 'Data respons dinamis dari inspektor berdasarkan column_config item'

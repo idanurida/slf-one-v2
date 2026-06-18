@@ -111,7 +111,7 @@ const DynamicChecklistForm = ({ checklistItem, onSave, defaultSampleNumber = '' 
       const responseData = {
         checklist_item_id: checklistItem.id,
         sample_number: sampleNumber,
-        response_ responses
+        response_data: responses
       };
 
       await onSave(responseData);

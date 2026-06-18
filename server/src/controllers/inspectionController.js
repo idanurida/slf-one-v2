@@ -1,4 +1,5 @@
 // server/src/controllers/inspectionController.js
+const { Sequelize } = require('sequelize');
 const Inspection = require('../models/Inspection');
 const Project = require('../models/Project');
 const ChecklistItem = require('../models/ChecklistItem');

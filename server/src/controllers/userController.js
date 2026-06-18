@@ -286,13 +286,4 @@ exports.updateMyProfile = async (req, res) => {
   }
 };
 
-module.exports = {
-  getUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-  changePassword,
-  getMyProfile,
-  updateMyProfile
-};
+// All functions exported via exports.XXX = pattern above

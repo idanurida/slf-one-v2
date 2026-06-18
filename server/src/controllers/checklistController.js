@@ -146,9 +146,4 @@ exports.getChecklistResponses = async (req, res) => {
   }
 };
 
-module.exports = {
-  getChecklistItems,
-  getChecklistItemById,
-  addChecklistResponse,
-  getChecklistResponses
-};
+// All functions exported via exports.XXX = pattern above

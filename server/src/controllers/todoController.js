@@ -471,13 +471,4 @@ exports.getTodoStats = async (req, res) => {
   }
 };
 
-module.exports = {
-  getMyTodos,
-  getAssignedTodos,
-  createTodo,
-  updateTodo,
-  deleteTodo,
-  getTodoComments,
-  addTodoComment,
-  getTodoStats
-};
+// All functions exported via exports.XXX = pattern above

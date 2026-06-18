@@ -367,12 +367,4 @@ exports.uploadPhoto = async (req, res) => {
   }
 };
 
-module.exports = {
-  getMyInspections,
-  startInspection,
-  getInspectionChecklist,
-  addChecklistResponse,
-  completeInspection,
-  getInspectionPhotos,
-  uploadPhoto
-};
+// All functions exported via exports.XXX = pattern above

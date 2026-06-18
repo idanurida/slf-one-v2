@@ -362,10 +362,5 @@ exports.getApprovalStatus = async (req, res) => {
   }
 };
 
-module.exports = {
-  getApprovalsByRole,
-  getProjectApprovals,
-  approveByRole,
-  rejectByRole,
-  getApprovalStatus
-};
+
+// All functions exported via exports.XXX = pattern above

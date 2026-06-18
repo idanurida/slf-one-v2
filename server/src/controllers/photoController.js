@@ -224,9 +224,4 @@ exports.updatePhoto = async (req, res) => {
   }
 };
 
-module.exports = {
-  uploadPhoto,
-  getInspectionPhotos,
-  deletePhoto,
-  updatePhoto
-};
+// All functions exported via exports.XXX = pattern above

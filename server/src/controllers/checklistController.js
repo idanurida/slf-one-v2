@@ -105,7 +105,7 @@ exports.addChecklistResponse = async (req, res) => {
       inspection_id: parseInt(inspectionId),
       checklist_item_id: checklist_item_id,
       sample_number: sample_number || null,
-      response_ response_data || {}
+      response_data: response_data || {}
     });
 
     res.status(201).json(response);

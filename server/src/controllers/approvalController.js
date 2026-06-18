@@ -362,4 +362,10 @@ exports.getApprovalStatus = async (req, res) => {
   }
 };
 
-module
+module.exports = {
+  getApprovalsByRole,
+  getProjectApprovals,
+  approveByRole,
+  rejectByRole,
+  getApprovalStatus
+};

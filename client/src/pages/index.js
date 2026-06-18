@@ -130,7 +130,7 @@ const SplashPage = () => {
               maxW="400px" 
               color="gray.500"
             >
-              © {new Date().getFullYear(2025)} SLF One Manager. Hak Cipta Dilindungi.
+              © {new Date().getFullYear()} SLF One Manager. Hak Cipta Dilindungi.
             </Text>
           </motion.div>
         </VStack>

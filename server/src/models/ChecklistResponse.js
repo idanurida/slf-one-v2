@@ -1,57 +1,63 @@
-// server/src/models/ChecklistItem.js
+// server/src/models/ChecklistResponse.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection');
 
-const ChecklistItem = sequelize.define('ChecklistItem', {
+const ChecklistResponse = sequelize.define('ChecklistResponse', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  code: {
+  inspection_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'inspections',
+      key: 'id'
+    },
+    comment: 'ID inspeksi terkait'
+  },
+  checklist_item_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'checklist_items',
+      key: 'id'
+    },
+    comment: 'ID item checklist yang direspons'
+  },
+  sample_number: {
     type: DataTypes.STRING(50),
-    allowNull: false,
-    unique: true,
-    comment: 'Unique code from JSON template (e.g., surat_permohonan_slf, pondasi)'
-  },
-  category: {
-    type: DataTypes.STRING(50),
-    allowNull: false,
-    comment: 'Category from JSON template (administrative, tata_bangunan, keandalan)'
-  },
-  description: {
-    type: DataTypes.TEXT,
-    allowNull: false,
-    comment: 'Human-readable description'
-  },
-  column_config: {
-    type: DataTypes.JSONB || DataTypes.TEXT,
-    allowNull: false,
-    comment: 'Dynamic column configuration from JSON template'
-  },
-  applicable_for: {
-    type: DataTypes.ARRAY(DataTypes.STRING) || DataTypes.JSONB || DataTypes.TEXT,
     allowNull: true,
-    comment: 'Array of request types this item applies to'
+    comment: 'Nomor sampel untuk item ini'
   },
-  is_active: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: true
+  user_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    references: {
+      model: 'users',
+      key: 'id'
+    },
+    comment: 'ID user yang membuat respons'
+  },
+  project_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    references: {
+      model: 'projects',
+      key: 'id'
+    },
+    comment: 'ID proyek terkait'
+  },
+  response_data: {
+    type: DataTypes.JSONB,
+    allowNull: true,
+    comment: 'Data respons dinamis dari inspektor berdasarkan column_config item'
   }
 }, {
   timestamps: true,
-  tableName: 'checklist_items',
-  underscored: true,
-  indexes: [
-    {
-      unique: false,
-      fields: ['category']
-    },
-    {
-      unique: false,
-      fields: ['code']
-    }
-  ]
+  tableName: 'checklist_responses',
+  underscored: true
 });
 
-module.exports = ChecklistItem;
+module.exports = ChecklistResponse;
